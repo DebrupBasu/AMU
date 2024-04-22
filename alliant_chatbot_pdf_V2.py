@@ -26,7 +26,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Group 253.png")
+img = Image.open("img/Group 253.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
@@ -75,7 +75,7 @@ def process_pdf(uploaded_file):
     pdf_text = ""
     try:
         # Save the uploaded file to a temporary location
-        temp_file_path = os.path.join("C:\\Users\\Debrup Basu\\Downloads", uploaded_file.name)
+        temp_file_path = os.path.join("data", uploaded_file.name)
         with open(temp_file_path, "wb") as temp_file:
             temp_file.write(uploaded_file.getvalue())
 
@@ -114,7 +114,7 @@ def generate_answer():
     subject_emb = ed.embedding(subject_text, api_key)
 
     # Retrieve similar email idxes
-    sim_idx, sim_subject, sim_body, sim_attachment, sim_response = ss.semantic_search_module("C:\\Users\\Debrup Basu\\Downloads\\AMU\\data\\embedding_results_v3.csv", subject_emb, body_emb, pdf_emb, K=1)
+    sim_idx, sim_subject, sim_body, sim_attachment, sim_response = ss.semantic_search_module("data/embedding_results_v3.csv", subject_emb, body_emb, pdf_emb, K=1)
     print(subject_emb)
     print(sim_idx)
     
