@@ -7,6 +7,7 @@ Created on Sat Dec 2 01:11:40 2023
 import streamlit as st
 from PIL import Image
 import base64, io
+import sys
 import subprocess
 st.markdown("""
     <style>
@@ -46,4 +47,5 @@ No more waiting for emails – get the information you need, when you need it.
 import subprocess
 
 if st.button("Click Here to Use Ask My Underwriter"):
-    subprocess.Popen(["streamlit", "run", "alliant_underwriters.py"])
+    #subprocess.Popen(["streamlit", "run", "alliant_underwriters.py"])
+    subprocess.run([f"{sys.executable}", "alliant_underwriters.py"])
