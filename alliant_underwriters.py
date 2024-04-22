@@ -19,7 +19,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Alliant_Avatars.png")
+img = Image.open("img/Alliant_Avatars.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
@@ -40,12 +40,12 @@ image_sources = [
 
 # Load images and convert to base64 encoded strings
 image_urls = [
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Tyrone- Arizona.jpg"),
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Jessica- NC.jpg"),
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Sheila- Missouri.jpg"),
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Jeffry- Florida.jpg"),
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Rayni- Texas.jpg"),
-  Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Patrick- Georgia.jpg")
+  Image.open("img/Tyrone- Arizona.jpg"),
+  Image.open("img/Jessica- NC.jpg"),
+  Image.open("img/Sheila- Missouri.jpg"),
+  Image.open("img/Jeffry- Florida.jpg"),
+  Image.open("img/Rayni- Texas.jpg"),
+  Image.open("img/Patrick- Georgia.jpg")
 ]
 
 st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Underwriter Ally: Choose the Key to Your Insurance Success!</h3>", unsafe_allow_html=True)
@@ -59,4 +59,4 @@ selected_underwriter = image_select(
 
 # On selecting an underwriter execute alliant_chatbot.py
 if selected_underwriter:
-    subprocess.Popen(["streamlit", "run", "C:\\Users\\Debrup Basu\\Downloads\\AMU\\alliant_chatbot_pdf_V2.py"])
+    subprocess.Popen(["streamlit", "run", "alliant_chatbot_pdf_V2.py"])

@@ -1,7 +1,4 @@
-conda create --name streamlit_env2 python=3.9
-conda install -n streamlit_env2 pip
-source activate streamlit_env2
-
+pip install streamlit_image_select
 pip install streamlit
 pip install streamlit-chat
 pip install transformers

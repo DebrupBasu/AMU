@@ -1,1 +1,1 @@
-This is the integration code from JS
+This is the mobile version demo code.

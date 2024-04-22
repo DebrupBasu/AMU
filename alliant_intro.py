@@ -7,6 +7,7 @@ Created on Sat Dec 2 01:11:40 2023
 import streamlit as st
 from PIL import Image
 import base64, io
+import sys
 import subprocess
 st.markdown("""
     <style>
@@ -21,7 +22,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Alliant_Avatars.png")
+img = Image.open("img/Alliant_Avatars.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
@@ -42,8 +43,7 @@ No more waiting for emails – get the information you need, when you need it.
 """)
 
 # Create a button that executes alliant_underwriters.py
-
-import subprocess
-
-if st.button("Click Here to Use Ask My Underwriter"):
-    subprocess.Popen(["streamlit", "run", "C:\\Users\\Debrup Basu\\Downloads\\AMU\\alliant_underwriters.py"])
+#import subprocess
+st.markdown("[Open Ask My Underwriter](https://underwriters.streamlit.app/)")
+    #subprocess.Popen(["streamlit", "run", "alliant_underwriters.py"])
+    #subprocess.run([f"{sys.executable}", "alliant_underwriters.py"])
