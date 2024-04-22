@@ -47,5 +47,6 @@ No more waiting for emails – get the information you need, when you need it.
 import subprocess
 
 if st.button("Click Here to Use Ask My Underwriter"):
+    st.markdown("[Open Ask My Underwriter](https://underwriters.streamlit.app/)")
     #subprocess.Popen(["streamlit", "run", "alliant_underwriters.py"])
-    subprocess.run([f"{sys.executable}", "alliant_underwriters.py"])
+    #subprocess.run([f"{sys.executable}", "alliant_underwriters.py"])
