@@ -1,11 +1,10 @@
+torch==1.13.0+cpu
 streamlit_image_select
 streamlit-chat
 transformers
 pymupdf
 frontend
 openai==0.28.1
-torch==1.10.0+cpu
-torchvision==0.11.1+cpu
-torchaudio==0.10.0
 chardet
 faiss-cpu
+
