@@ -39,7 +39,7 @@ image_sources = [
 
 image_urls = [
   "img/Tyrone- Arizona.jpg",
-  "img/Jessica-NC.jpg",
+  "img/Jessica-NC.png",
   "img/Sheila- Missouri.jpg",
   "img/Jeffry- Florida.jpg",
   "img/Rayni- Texas.jpg",
