@@ -54,7 +54,8 @@ selected_underwriter = image_select(
    label="",
    images=image_urls,
    captions=image_sources,
-   use_container_width=False
+   use_container_width=False,
+   unsafe_allow_html=True 
  )
 
 
