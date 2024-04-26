@@ -57,6 +57,7 @@ selected_underwriter = image_select(
    use_container_width=False
  )
 
-# On selecting an underwriter execute alliant_chatbot.py
+# On selecting an underwriter execute alliant_chatbot_pdf_V2.py
 if selected_underwriter:
-    subprocess.Popen(["streamlit", "run", "alliant_chatbot_pdf_V2.py"])
+    st.markdown("[Click here to open the chatbot](https://askmyunderwriter-chatbot.streamlit.app/)")
+
