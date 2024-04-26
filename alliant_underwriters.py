@@ -40,8 +40,8 @@ image_sources = [
 image_urls = [
   "img/Tyrone- Arizona.jpg",
   "img/Jessica-NC.png",
-  "img/Sheila- Missouri.jpg",
-  "img/Jeffry- Florida.jpg",
+  "img/Sheila-Missouri.png",
+  "img/Jeffry-Florida.png",
   "img/Rayni- Texas.jpg",
   "img/Patrick- Georgia.jpg"
 ]
