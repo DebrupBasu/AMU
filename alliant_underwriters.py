@@ -28,7 +28,6 @@ image_base64 = base64.b64encode(image_bytes.getvalue()).decode()
 main_content_container = st.empty()
 main_content_container.markdown(f'<img class="intrologo" src="data:image/jpg;base64,{image_base64}">', unsafe_allow_html=True)
 
-# Define image data (assuming each underwriter has one image)
 image_sources = [
   "[Name: Tyrone, Location: Arizona](https://askmyunderwriter-chatbot.streamlit.app/)",
   "[Name: Jessica, Location: North Carolina](https://askmyunderwriter-chatbot.streamlit.app/)",
@@ -38,27 +37,24 @@ image_sources = [
   "[Name: Patrick, Location: Georgia](https://askmyunderwriter-chatbot.streamlit.app/)"
 ]
 
-# Load images and convert to base64 encoded strings
 image_urls = [
-  Image.open("img/Tyrone- Arizona.jpg"),
-  Image.open("img/Jessica- NC.jpg"),
-  Image.open("img/Sheila- Missouri.jpg"),
-  Image.open("img/Jeffry- Florida.jpg"),
-  Image.open("img/Rayni- Texas.jpg"),
-  Image.open("img/Patrick- Georgia.jpg")
+  "img/Tyrone- Arizona.jpg",
+  "img/Jessica- NC.jpg",
+  "img/Sheila- Missouri.jpg",
+  "img/Jeffry- Florida.jpg",
+  "img/Rayni- Texas.jpg",
+  "img/Patrick- Georgia.jpg"
 ]
 
+# Display images and corresponding markdown links in the same row and column
 st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Underwriter Ally: Choose the Key to Your Insurance Success!</h3>", unsafe_allow_html=True)
 
-selected_underwriter = image_select(
-   label="",
-   images=image_urls,
-   captions=image_sources,
-   use_container_width=False,
-   key="underwriter_select"
- )
-for source in image_sources:
-    st.markdown(source)
+for i in range(len(image_urls)):
+    col1, col2 = st.beta_columns(2)
+    with col1:
+        st.image(image_urls[i], use_column_width=True)
+    with col2:
+        st.markdown(image_sources[i])
 
 # On selecting an underwriter execute alliant_chatbot_pdf_V2.py
 #if selected_underwriter:
