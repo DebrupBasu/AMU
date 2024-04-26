@@ -49,12 +49,14 @@ image_urls = [
 # Display images and corresponding markdown links in the same row and column
 st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Underwriter Ally: Choose the Key to Your Insurance Success!</h3>", unsafe_allow_html=True)
 
+col1, col2 = st.columns(2)
+
 for i in range(len(image_urls)):
-    col1, col2 = st.beta_columns(2)
     with col1:
         st.image(image_urls[i], use_column_width=True)
     with col2:
         st.markdown(image_sources[i])
+
 
 # On selecting an underwriter execute alliant_chatbot_pdf_V2.py
 #if selected_underwriter:
