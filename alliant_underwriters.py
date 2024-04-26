@@ -49,12 +49,20 @@ image_urls = [
 # Display images and corresponding markdown links in the same row and column
 st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Underwriter Ally: Choose the Key to Your Insurance Success!</h3>", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+col1, col2, col3, col4 = st.columns(4)
 
 for i in range(len(image_urls)):
-    with col1:
+    if i % 4 == 0:
+        col = col1
+    elif i % 4 == 1:
+        col = col2
+    elif i % 4 == 2:
+        col = col3
+    else:
+        col = col4
+    
+    with col:
         st.image(image_urls[i], use_column_width=True)
-    with col2:
         st.markdown(image_sources[i])
 
 
