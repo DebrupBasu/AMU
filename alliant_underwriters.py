@@ -30,13 +30,14 @@ main_content_container.markdown(f'<img class="intrologo" src="data:image/jpg;bas
 
 # Define image data (assuming each underwriter has one image)
 image_sources = [
-  "Name: Tyrone, Location: Arizona",
-  "Name: Jessica, Location: North Carolina",
-  "Name: Sheila, Location: Missouri",
-  "Name: Jeffry, Location: Florida",
-  "Name: Rayni, Location: Texas",
-  "Name: Patrick, Location: Georgia"
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Tyrone, Location: Arizona</a>",
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Jessica, Location: North Carolina</a>",
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Sheila, Location: Missouri</a>",
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Jeffry, Location: Florida</a>",
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Rayni, Location: Texas</a>",
+  "<a href='https://askmyunderwriter-chatbot.streamlit.app/' style='text-decoration: none; color: inherit;'>Name: Patrick, Location: Georgia</a>"
 ]
+
 
 # Load images and convert to base64 encoded strings
 image_urls = [
@@ -58,6 +59,6 @@ selected_underwriter = image_select(
  )
 
 # On selecting an underwriter execute alliant_chatbot_pdf_V2.py
-if selected_underwriter:
-    st.markdown("[Click here to open the chatbot](https://askmyunderwriter-chatbot.streamlit.app/)")
+#if selected_underwriter:
+#    st.markdown("[Click here to open the chatbot](https://askmyunderwriter-chatbot.streamlit.app/)")
 
