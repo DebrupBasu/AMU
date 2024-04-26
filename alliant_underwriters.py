@@ -53,7 +53,7 @@ st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Und
 selected_underwriter = image_select(
    label="",
    images=image_urls,
-   captions=st.markdown(image_sources),
+   captions=image_sources,
    use_container_width=False
  )
 
