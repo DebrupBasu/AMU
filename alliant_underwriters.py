@@ -57,7 +57,8 @@ selected_underwriter = image_select(
    use_container_width=False,
    key="underwriter_select"
  )
-
+for source in image_sources:
+    st.markdown(source)
 
 # On selecting an underwriter execute alliant_chatbot_pdf_V2.py
 #if selected_underwriter:
