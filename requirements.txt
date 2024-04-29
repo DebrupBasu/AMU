@@ -1,7 +1,6 @@
 torch==1.13.*
 streamlit_image_select
 streamlit-chat
-textwrap
 transformers
 fitz
 frontend
