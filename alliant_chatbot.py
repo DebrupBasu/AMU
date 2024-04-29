@@ -26,7 +26,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("img/Group 253.png")
+img = Image.open("img/Patrick_Chatbot.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
