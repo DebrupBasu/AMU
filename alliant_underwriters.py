@@ -29,12 +29,12 @@ main_content_container = st.empty()
 main_content_container.markdown(f'<img class="intrologo" src="data:image/jpg;base64,{image_base64}">', unsafe_allow_html=True)
 
 image_sources = [
-  "[Name: Tyrone, Location: Arizona](https://askmyunderwriter-chatbot.streamlit.app/)",
-  "[Name: Jessica, Location: North Carolina](https://askmyunderwriter-chatbot.streamlit.app/)",
-  "[Name: Sheila, Location: Missouri](https://askmyunderwriter-chatbot.streamlit.app/)",
-  "[Name: Jeffry, Location: Florida](https://askmyunderwriter-chatbot.streamlit.app/)",
-  "[Name: Rayni, Location: Texas](https://askmyunderwriter-chatbot.streamlit.app/)",
-  "[Name: Patrick, Location: Georgia](https://askmyunderwriter-chatbot.streamlit.app/)"
+  "[Name: Tyrone, Location: Arizona](https://askmyunderwriter.streamlit.app/)",
+  "[Name: Jessica, Location: North Carolina](https://askmyunderwriter.streamlit.app/)",
+  "[Name: Sheila, Location: Missouri](https://askmyunderwriter.streamlit.app/)",
+  "[Name: Jeffry, Location: Florida](https://askmyunderwriter.streamlit.app/)",
+  "[Name: Rayni, Location: Texas](https://askmyunderwriter.streamlit.app/)",
+  "[Name: Patrick, Location: Georgia](https://askmyunderwriter.streamlit.app/)"
 ]
 
 image_urls = [
