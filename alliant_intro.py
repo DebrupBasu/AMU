@@ -22,7 +22,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("img/Alliant_Avatars.png")
+img = Image.open("img/Alliant-Avatars.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
