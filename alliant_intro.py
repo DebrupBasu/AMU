@@ -32,7 +32,7 @@ main_content_container = st.empty()
 main_content_container.markdown(f'<img class="intrologo" src="data:image/jpg;base64,{image_base64}">', unsafe_allow_html=True)
 
 # Title and introduction text
-st.markdown("<h1 style='text-align: left;font-size: 20px; color: black;'>Introducing Alliant's Ask My Underwriter, your one-stop shop for getting fast and reliable answers to your title insurance questions.</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: left;font-size: 20px; color: black;'>Introducing Ask My Underwriter! These virtual underwriting assistants are here to get instant, informed, and tailored responses to your title insurance questions.</h1>", unsafe_allow_html=True)
 
 st.write("""
 **Skip the wait, get expert underwriting answers.**
