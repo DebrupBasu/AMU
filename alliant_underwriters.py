@@ -28,22 +28,32 @@ image_base64 = base64.b64encode(image_bytes.getvalue()).decode()
 main_content_container = st.empty()
 main_content_container.markdown(f'<img class="intrologo" src="data:image/jpg;base64,{image_base64}">', unsafe_allow_html=True)
 
-image_sources = [
-  "[Name: Tyrone, Location: Arizona](https://askmyunderwriter.streamlit.app/)",
-  "[Name: Jessica, Location: North Carolina](https://askmyunderwriter.streamlit.app/)",
-  "[Name: Sheila, Location: Missouri](https://askmyunderwriter.streamlit.app/)",
-  "[Name: Jeffry, Location: Florida](https://askmyunderwriter.streamlit.app/)",
-  "[Name: Rayni, Location: Texas](https://askmyunderwriter.streamlit.app/)",
-  "[Name: Patrick, Location: Georgia](https://askmyunderwriter.streamlit.app/)"
+# Function to convert an image to base64
+def image_to_base64(image_path):
+    img = Image.open(image_path)
+    img = img.convert("RGB")
+    image_bytes = io.BytesIO()
+    img.save(image_bytes, format="JPEG")
+    return base64.b64encode(image_bytes.getvalue()).decode()
+
+# List of image file names in the img/ directory
+image_filenames = [
+    "Tyrone- Arizona.jpg",
+    "Jessica-NC.png",
+    "Sheila-Missouri.png",
+    "Jeffry-Florida.png",
+    "Rayni- Texas.jpg",
+    "Patrick- Georgia.jpg"
 ]
 
-image_urls = [
-  "img/Tyrone- Arizona.jpg",
-  "img/Jessica-NC.png",
-  "img/Sheila-Missouri.png",
-  "img/Jeffry-Florida.png",
-  "img/Rayni- Texas.jpg",
-  "img/Patrick- Georgia.jpg"
+# List of image sources with names and locations
+image_sources = [
+    "[Name: Tyrone, Location: Arizona](https://askmyunderwriter.streamlit.app/)",
+    "[Name: Jessica, Location: North Carolina](https://askmyunderwriter.streamlit.app/)",
+    "[Name: Sheila, Location: Missouri](https://askmyunderwriter.streamlit.app/)",
+    "[Name: Jeffry, Location: Florida](https://askmyunderwriter.streamlit.app/)",
+    "[Name: Rayni, Location: Texas](https://askmyunderwriter.streamlit.app/)",
+    "[Name: Patrick, Location: Georgia](https://askmyunderwriter.streamlit.app/)"
 ]
 
 # Display images and corresponding markdown links in the same row and column
@@ -51,7 +61,7 @@ st.markdown("<h3 style='font-size:24px; font-weight:bold;'>Connect With Your Und
 
 col1, col2, col3, col4 = st.columns(4)
 
-for i in range(len(image_urls)):
+for i, image_filename in enumerate(image_filenames):
     if i % 4 == 0:
         col = col1
     elif i % 4 == 1:
@@ -60,20 +70,15 @@ for i in range(len(image_urls)):
         col = col3
     else:
         col = col4
-    
+
     with col:
-        #st.image(image_urls[i], use_column_width=True)
-        #st.markdown(image_sources[i])
-        image_url = image_urls[i]
-        image_source = image_sources[i]
+        # Convert the image to base64
+        image_path = f"img/{image_filename}"
+        image_base64 = image_to_base64(image_path)
 
         # Create a hovering effect and make the image clickable
-        image_html = f'<a href="https://askmyunderwriter.streamlit.app/" target="_blank"><img src="{image_url}" style="width:100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;"></a>'
+        image_html = f'<a href="https://askmyunderwriter.streamlit.app/" target="_blank"><img src="data:image/jpg;base64,{image_base64}" style="width:100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;"></a>'
         st.markdown(image_html, unsafe_allow_html=True)
-        st.markdown(image_source)        
+        st.markdown(image_sources[i])
 
-
-# On selecting an underwriter execute alliant_chatbot_pdf_V2.py
-#if selected_underwriter:
-#    st.markdown("[Click here to open the chatbot](https://askmyunderwriter-chatbot.streamlit.app/)")
 
