@@ -62,8 +62,15 @@ for i in range(len(image_urls)):
         col = col4
     
     with col:
-        st.image(image_urls[i], use_column_width=True)
-        st.markdown(image_sources[i])
+        #st.image(image_urls[i], use_column_width=True)
+        #st.markdown(image_sources[i])
+        image_url = image_urls[i]
+        image_source = image_sources[i]
+
+        # Create a hovering effect and make the image clickable
+        image_html = f'<a href="https://askmyunderwriter.streamlit.app/" target="_blank"><img src="{image_url}" style="width:100%; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;"></a>'
+        st.markdown(image_html, unsafe_allow_html=True)
+        st.markdown(image_source)        
 
 
 # On selecting an underwriter execute alliant_chatbot_pdf_V2.py
