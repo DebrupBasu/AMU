@@ -4,7 +4,7 @@ import base64
 import io
 from streamlit_chat import message as st_message
 import os
-import fitz  # PyMuPDF
+import fitz
 from AMU_module import embedding as ed
 from AMU_module import semantic_search as ss
 from AMU_module import llm_generation as lg
@@ -25,7 +25,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-img = Image.open("C:\\Users\\Debrup Basu\\Downloads\\AMU\\img\\Group 253.png")
+img = Image.open("img/Group 253.png")
 img = img.convert("RGB")
 image_bytes = io.BytesIO()
 img.save(image_bytes, format="JPEG")
@@ -122,7 +122,7 @@ def generate_answer():
     subject_emb = ed.embedding(subject_text, api_key)
 
     # Retrieve similar email idxes
-    sim_idx, sim_subject, sim_body, sim_attachment, sim_response = ss.semantic_search_module("C:\\Users\\Debrup Basu\\Downloads\\AMU\\data\\embedding_results_v3.csv", subject_emb, body_emb, pdf_emb, K=1)
+    sim_idx, sim_subject, sim_body, sim_attachment, sim_response = ss.semantic_search_module("data/embedding_results_v3.csv", subject_emb, body_emb, pdf_emb, K=1)
     
     # LLM generation
     incoming_email = (subject_text, body_text, pdf_text)
