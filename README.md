@@ -1,1 +1,1 @@
-This is the mobile version demo code.
+This is the Demo Deployment Version of the code.
